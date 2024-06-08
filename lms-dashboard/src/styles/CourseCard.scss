@@ -1,0 +1,14 @@
+.course-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 200px;
+  height: 130px;
+  text-align: center;
+
+  .details-link {
+    display: block;
+    margin-top: 1rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+}
