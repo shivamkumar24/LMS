@@ -1,8 +1,8 @@
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import CourseList from "../components/CourseList";
-import CourseDetail from "../components/CourseDetail";
-import CourseUpload from "../components/CourseUpload";
+import CourseList from "../pages/CourseList";
+import CourseDetail from "../pages/CourseDetail";
+import CourseUpload from "../pages/CourseUpload";
 import PageNotFound from "../pages/PageNotFound";
 import { Route, Routes } from "react-router-dom";
 
