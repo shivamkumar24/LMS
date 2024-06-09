@@ -33,6 +33,18 @@ This is an LMS dashboard kind of project where students can see the course list 
 
 <br/>
 
+## Credentials:
+
+```bash
+  For Student:
+    username: user
+    password: user
+
+  For Teacher:
+    username: admin
+    password: admin
+```
+
 ## Glimpses of Lifestylestores.com Clonee 🙈 :
 
 <table>
