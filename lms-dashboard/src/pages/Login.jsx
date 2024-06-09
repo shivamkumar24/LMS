@@ -64,8 +64,8 @@ const Login = () => {
             onChange={(e) => setRole(e.target.value)}
             required
           >
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
+            <option value="user">Student</option>
+            <option value="admin">Teacher</option>
           </select>
         </label>
         <button type="submit">Login</button>
