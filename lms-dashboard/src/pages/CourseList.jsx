@@ -1,15 +1,33 @@
-import React from "react";
-import CourseCard from "../components/CourseCard";
+import React, { useState, useEffect } from "react";
 import "../styles/CourseList.scss";
+import axios from "axios";
+import CourseCard from "../components/CourseCard";
 
 const CourseList = () => {
-  const courses = [
-    { id: 1, title: "Course 1", description: "Description 1", progress: 50 },
-    { id: 2, title: "Course 2", description: "Description 2", progress: 20 },
-  ];
+  const [loading, setLoading] = useState(false);
+  const [courses, setCourses] = useState([]);
+
+  const getCourses = async () => {
+    setLoading(true);
+    try {
+      let res = await axios.get(`https://lms-server-s702.onrender.com/courses`);
+      let data = res.data;
+      setCourses(data);
+    } catch (error) {
+      alert("Error fetching course");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getCourses();
+  }, []);
 
   return (
     <div className="course-list">
+      {loading && <div className="loading">Loading .....</div>}
+
       {courses.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}

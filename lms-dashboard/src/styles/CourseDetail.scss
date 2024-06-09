@@ -1,9 +1,28 @@
 .course-detail {
-  width: 80%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
   padding: 1rem;
+  flex: 1;
+
+  .loading {
+    text-align: "center";
+    font-size: "22px";
+    font-weight: "bold";
+  }
 
   ul {
     list-style: none;
+  }
+
+  li {
+    margin: 5px 0px;
+  }
+
+  button {
+    padding: 0px 3px;
+    margin-left: 10px;
   }
 }

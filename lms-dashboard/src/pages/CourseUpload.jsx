@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../styles/CourseUpload.scss";
+import axios from "axios";
 
 const CourseUpload = () => {
   const [title, setTitle] = useState("");
+  const [progress, setProgress] = useState(0);
   const [description, setDescription] = useState("");
   const [lessons, setLessons] = useState([{ id: 1, title: "" }]);
 
@@ -16,9 +18,22 @@ const CourseUpload = () => {
     setLessons([...lessons, { id: lessons.length + 1, title: "" }]);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log({ title, description, lessons });
+    try {
+      const res = await axios.post(
+        "https://lms-server-s702.onrender.com/courses",
+        {
+          title,
+          progress,
+          description,
+          lessons,
+        }
+      );
+      alert("Course Uploaded Successfully");
+    } catch (error) {
+      alert("Error while uploading course");
+    }
   };
 
   return (
@@ -37,6 +52,15 @@ const CourseUpload = () => {
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label>Progress</label>
+        <input
+          type="number"
+          value={progress}
+          onChange={(e) => setProgress(e.target.value)}
           required
         />
       </div>

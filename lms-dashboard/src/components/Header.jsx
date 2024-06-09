@@ -1,15 +1,17 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Header.scss";
-import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
+  const isRole = localStorage.getItem("isRole");
+
   return (
     <header className="header">
       <h1 onClick={() => navigate("/")}>LMS</h1>
       <nav>
-        <a href="/">Courses</a>
-        <a href="/upload">Upload Course</a>
+        <Link to="/">Courses</Link>
+        {isRole === "admin" && <Link to="/upload">Upload Course</Link>}
       </nav>
     </header>
   );

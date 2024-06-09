@@ -2,13 +2,27 @@
   border: 1px solid #ccc;
   padding: 1rem;
   width: 200px;
-  height: 130px;
+  height: 275px;
   text-align: center;
+
+  .description {
+    margin-top: 10px;
+  }
+
+  .progress {
+    margin-top: 12px;
+    font-weight: bold;
+  }
+
+  .read-more {
+    margin-left: 7px;
+  }
 
   .details-link {
     display: block;
     margin-top: 1rem;
     color: #007bff;
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: bold;
   }
 }
